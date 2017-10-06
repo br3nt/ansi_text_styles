@@ -11,7 +11,7 @@ The refinement methods in the gem can be used by including `using AnsiTextStyles
 # Examples
 
 As this gem makes use of [Refinements][1], some of the below examples will not work if copied and pasted directly into IRB or Pry.
-This is due to the lexical scoping of refinements.  A nice writeup of this can be found [here][2].
+This is due to the lexical scoping of refinements.  A nice writeup by James Adam can be found on his blog, [interblah.net][2].
 Instead, you can save the example into a file and run the file with `ruby example.rb`.
 These examples will start with the code comment `# example.rb`.
 
@@ -37,7 +37,7 @@ puts 'How are you?'.blue.bold + " " + 'I am good!'.red.bold
 puts '%s %s' % ["How are you?".blue.bold, 'I am good!'.red.bold]
 ```
 
-## Using stored style attributes in to apply to some text later:
+## Using stored style attributes to apply to a String later:
 
 ```ruby
 # example.rb
