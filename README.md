@@ -6,6 +6,10 @@ When you want to output colourized or stylized text to the console, use this gem
 
 # Usage
 
+In your `Gemfile` add `gem 'ansi_text_styles'`.
+
+In your codebase add `require 'ansi_text_styles'`.
+
 The refinement methods in the gem can be used by including `using AnsiTextStyles` in the file, **class** definition, or **module** definition in which you wish to use the [refinement][1].
 
 # Examples
