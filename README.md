@@ -17,7 +17,8 @@ The refinement methods in the gem can be used by including `using AnsiTextStyles
 As this gem makes use of [Refinements][1], some of the below examples will not work if copied and pasted directly into IRB or Pry.
 This is due to the lexical scoping of refinements.  A nice writeup by James Adam can be found on his blog, [interblah.net][2].
 
-Instead, you can require the example files which are included in the gem.  Eg `require 'ansi_text_styles/examples/basic'`.
+Instead, you can require the example files which are included in the gem.
+Eg `require 'ansi_text_styles/examples/basic'`.
 
 ## Using the `style` method
 
