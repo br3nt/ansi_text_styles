@@ -1,6 +1,6 @@
 require 'ansi_text_styles'
 
-using AnsiTextStyles::Refinement
+using AnsiTextStyles
 
 # String.include AnsiTextStyles
 puts 'Foreground using RGB array'.style(fg: [123, 6, 88])

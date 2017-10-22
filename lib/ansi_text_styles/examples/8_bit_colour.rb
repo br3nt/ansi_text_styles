@@ -1,6 +1,6 @@
 require 'ansi_text_styles'
 
-using AnsiTextStyles::Refinement
+using AnsiTextStyles
 
 puts
 puts "Standard and high intensity colours"
