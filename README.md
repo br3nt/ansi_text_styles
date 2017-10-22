@@ -85,6 +85,74 @@ puts ColourLogger.log_info('a pretty colourised info message')
 puts ColourLogger.log_error('a pretty colourised error message')
 ```
 
+## 8-bit (256) colours
+
+Foreground and background colour can be applied using 8-bit colour codes (0 - 255).
+
+```ruby
+# example.rb
+
+using AnsiTextStyles
+
+puts
+puts "Standard and high intensity colours"
+puts
+
+# Standard and high intensity colours
+(0..15).each do |fg|
+  row = (0..15).collect do |bg|
+    'xxx'.center(5).style(fg: fg, bg: bg)
+  end
+  puts row.join
+end
+
+puts
+puts "216 colours"
+puts
+
+# 216 colours
+colours = (16..231).collect do |bg|
+  fg = (bg - 16) % 36 < 18 ? 15 : 0
+  bg.to_s.center(5).style(fg: fg, bg: bg)
+end
+
+colours.each_slice(36).collect do |row|
+  puts row.join
+end
+
+puts
+puts "Greyscale colours"
+puts
+
+# Greyscale colours
+colours = (232..255).collect do |bg|
+  fg = (bg - 16) % 24 < 12 ? 15 : 0
+  bg.to_s.center(5).style(fg: fg, bg: bg)
+end
+
+colours.each_slice(12) do |row|
+  puts row.join
+end
+```
+
+## True colour
+
+```ruby
+# example.rb
+
+using AnsiTextStyles
+
+puts 'Foreground using RGB array'.style(fg: [123, 6, 88])
+puts 'Foreground using RGB hash'.style(fg: { r: 5, g: 67, b: 145})
+
+puts 'Background using RGB array'.style(bg: [6, 200, 56])
+puts 'Background using RGB hash'.style(bg: { red: 56, green: 99, blue: 240})
+
+
+puts 'Foreground and Background using RGB array'.style(fg: [250, 200, 4], bg: [6, 7, 245])
+puts 'Foreground and Background using RGB hash'.style(fg: { red: 70, green: 222, blue: 9}, bg: { r: 200, g: 8, b: 0})
+```
+
 ## Compatibility
 
 Because this gem makes use of [refinements][1], it is only compatible with Ruby version 2.0.0 and above (excluding any future release of Ruby 3).
