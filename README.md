@@ -157,6 +157,49 @@ puts 'Foreground and Background using RGB array'.style(fg: [250, 200, 4], bg: [6
 puts 'Foreground and Background using RGB hash'.style(fg: { red: 70, green: 222, blue: 9}, bg: { r: 200, g: 8, b: 0})
 ```
 
+# Built-in Styles
+
+## Properties
+Style | Method | Style Code
+----- | ------ | ----------
+No Style | `none` | `0`
+Bold | `bold` | `1`
+Bright (increased intensity) | `bright` | `1`
+Faint (decreased intensity) | `faint` | `2`
+Italic | `italic` | `3`
+Underline | `underline` | `4`
+Blink (slow) | `blink` | `5`
+Blink (slow) | `blink_slow` | `5`
+Blink (fast) | `blink_fast` | `6`
+Swap background and foreground colours | `reverse` | `7`
+Hide (foreground colour same as background) | `hide` | `8`
+Crossed out | `crossed_out` | `9`
+
+## Colours
+Colour | Foreground Method | Fg Code | Background Method | Bg Code
+------ | ----------------- | ------- | ----------------- | -------
+Default | `default_fg` | `39` | `default_bg` | `49`
+Black | `black` | `30` | `bg_black` | `40`
+Grey | `grey` | `90` | `bg_grey` | `100`
+Light Grey | `lt_grey` | `37` | `bg_lt_grey` | `47`
+White | `white` | `97` | `bg_white` | `107`
+Red | `red` | `31` | `bg_red` | `41`
+Light Red | `lt_red` | `91` | `bg_lt_red` | `101`
+Green | `green` | `32` | `bg_green` | `42`
+Light Green | `lt_green` | `92` | `bg_lt_green` | `102`
+Light Yellow | `dk_yellow` | `33` | `bg_dk_yellow` | `43`
+Brown | `brown` | `33` | `bg_dk_brown` | `43`
+Yellow | `yellow` | `93` | `bg_yellow` | `103`
+Blue | `blue` | `34` | `bg_blue` | `44`
+Light Blue | `lt_blue` | `94` | `bg_lt_blue` | `104`
+Magenta | `magenta` | `35` | `bg_magenta` | `45`
+Light Magenta | `lt_magenta` | `95` | `bg_lt_magenta` | `105`
+Pink | `pink` | `95` | `bg_pink` | `105`
+Cyan | `cyan` | `36` | `bg_cyan` | `46`
+Light Cyan | `lt_cyan` | `96` | `bg_lt_cyan` | `106`
+Default colour | `default_fg` | `39` | `default_bg` | `49`
+
+
 ## Compatibility
 
 Because this gem makes use of [refinements][1], it is only compatible with Ruby version 2.0.0 and above (excluding any future release of Ruby 3).
