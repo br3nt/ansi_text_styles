@@ -73,4 +73,3 @@ module AnsiTextStyles
   end
 
 end
-
