@@ -16,13 +16,13 @@ The refinement methods in the gem can be used by including `using AnsiTextStyles
 
 As this gem makes use of [Refinements][1], some of the below examples will not work if copied and pasted directly into IRB or Pry.
 This is due to the lexical scoping of refinements.  A nice writeup by James Adam can be found on his blog, [interblah.net][2].
-Instead, you can save the example into a file and run the file with `ruby example.rb`.
-These examples will start with the code comment `# example.rb`.
+
+Instead, you can require the example files which are included in the gem.  Eg `require 'ansi_text_styles/examples/basic'`.
 
 ## Using the `style` method
 
 ```ruby
-# example.rb
+# require 'ansi_text_styles/examples/basic'
 
 using AnsiTextStyles
 
@@ -33,7 +33,7 @@ puts '%s %s' % ["How are you?".style(:blue, :bold), 'I am good!'.style(:red, :bo
 ## Using chainable methods
 
 ```ruby
-# example.rb
+# require 'ansi_text_styles/examples/chainable'
 
 using AnsiTextStyles
 
@@ -44,7 +44,7 @@ puts '%s %s' % ["How are you?".blue.bold, 'I am good!'.red.bold]
 ## Using stored style attributes to apply to a String later:
 
 ```ruby
-# example.rb
+# require 'ansi_text_styles/examples/stored_styles'
 
 using AnsiTextStyles
 
@@ -57,12 +57,14 @@ text_styles = {
 text_styles.each do |name, style|
   styled_text = "Text styled multiple ways".style(style)
   puts "%s: %s" % [name, styled_text]
-end 
+end
 ```
 
 ## A Logger with colourised output
 
 ```ruby
+# require 'ansi_text_styles/examples/logger.rb'
+
 # Note: The String class is only modified within the lexical scope of the class
 
 class ColourLogger
@@ -71,7 +73,7 @@ class ColourLogger
   def self.status(text)
     "[#{text}]".ljust(7)
   end
-  
+
   def self.log_msg(status_text, message)
     "%s %s" % [status(status_text), message]
   end
@@ -94,7 +96,7 @@ puts ColourLogger.log_error('a pretty colourised error message')
 Foreground and background colour can be applied using 8-bit colour codes (0 - 255).
 
 ```ruby
-# example.rb
+# require 'ansi_text_styles/examples/8_bit_colour'
 
 using AnsiTextStyles
 
@@ -142,7 +144,7 @@ end
 ## True colour
 
 ```ruby
-# example.rb
+# require 'ansi_text_styles/examples/true_colour'
 
 using AnsiTextStyles
 
@@ -206,4 +208,3 @@ Because this gem makes use of [refinements][1], it is only compatible with Ruby 
 
 [1]: https://ruby-doc.org/core-2.4.0/doc/syntax/refinements_rdoc.html
 [2]: http://interblah.net/why-is-nobody-using-refinements
-

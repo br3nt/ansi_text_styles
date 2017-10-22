@@ -10,6 +10,11 @@ Gem::Specification.new do |spec|
   spec.licenses = ['MIT']
   spec.files = [
       'lib/ansi_text_styles.rb',
+      'lib/ansi_text_styles/examples/8_bit_colour.rb',
+      'lib/ansi_text_styles/examples/basic.rb',
+      'lib/ansi_text_styles/examples/chainable.rb',
+      'lib/ansi_text_styles/examples/logger.rb',
+      'lib/ansi_text_styles/examples/stored_styles.rb',
+      'lib/ansi_text_styles/examples/true_colour.rb',
     ]
 end
-
