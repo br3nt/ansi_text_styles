@@ -204,4 +204,3 @@ Because this gem makes use of [refinements][1], it is only compatible with Ruby 
 
 [1]: https://ruby-doc.org/core-2.4.0/doc/syntax/refinements_rdoc.html
 [2]: http://interblah.net/why-is-nobody-using-refinements
-
