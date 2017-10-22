@@ -41,10 +41,29 @@ module AnsiTextStyles
   end
 
   refine String do
-    # applies the text attributes to the current string
-    def style(*styles)
+    def style_code(*codes)
+      "\e[%sm%s\e[m" % [codes.flatten.compact.join(';'), self.to_s]
+    end
+
+    # applies the named style to the current string
+    def style(*styles, fg: nil, bg: nil)
+      # convert styles to codes
       codes = STYLES.values_at(*styles.flatten).compact
-      "\e[%sm%s\e[m" % [codes.join(';'), self.to_s]
+
+      # convert foreground and background codes
+      codes.push(*coerce_rgb_code(fg))
+      codes.push(*coerce_rgb_code(bg, bg: true))
+
+      style_code(codes)
+    end
+
+    def coerce_rgb_code(value, bg: false)
+      v = bg ? 48 : 38
+      case value
+      when Array   ; [v, 2, *Array.new(3) {|i| value[i] || 0 }[0...3]]
+      when Hash    ; [v, 2, value[:r] || value[:red] || 0, value[:g] || value[:green] || 0, value[:b] || value[:blue] || 0]
+      when Integer ; [v, 5, value]
+      end
     end
 
     # create instance methods for each text attribute (chainable)
