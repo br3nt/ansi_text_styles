@@ -16,7 +16,7 @@ module AnsiTextStyles
 
       # foreground colours
       black: 30, grey: 90, lt_grey: 37, white: 97,
-      red: 31, lt_red: 91, 
+      red: 31, lt_red: 91,
       green: 32, lt_green: 92,
       dk_yellow: 33, brown: 33, yellow: 93,
       blue: 34, lt_blue: 94,
@@ -24,7 +24,7 @@ module AnsiTextStyles
       cyan: 36, lt_cyan: 96,
       default: 39,
       default_fg: 39,
-      
+
       # background colours
       bg_black: 40, bg_grey: 100, bg_lt_grey: 47, bg_white: 107,
       bg_red: 41, bg_lt_red: 101,
